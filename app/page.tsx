@@ -1,10 +1,11 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/app/components/ui/button"
 import { motion } from "framer-motion"
 import { Github, Linkedin } from "lucide-react"
+import { ThemeProvider } from "@/app/components/theme-provider"
 
-export default function WelcomeScreen() {
+export default function Portfolio() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-white to-gray-50 p-4">
       <motion.div
@@ -13,9 +14,9 @@ export default function WelcomeScreen() {
         transition={{ duration: 0.8 }}
         className="text-center"
       >
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6">Hi, I'm Kenneth.</h1>
+        <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-6">Hi, I&apos;m Kenneth.</h1>
         <p className="text-xl text-gray-600 max-w-md mx-auto mb-8 flex items-center justify-center gap-3">
-          Full-Stack Developer
+          Full Stack Developer @kenzychew
           <a
             href="https://linkedin.com/in/kenzychew"
             target="_blank"
