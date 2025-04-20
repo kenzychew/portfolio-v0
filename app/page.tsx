@@ -167,7 +167,7 @@ export default function Portfolio() {
       <footer className="bg-secondary/20 py-6 px-4">
         <div className="container mx-auto flex justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Kenneth Chew. All rights reserved.
+            © {new Date().getFullYear()} kenzychew. All rights reserved.
           </p>
         </div>
       </footer>
