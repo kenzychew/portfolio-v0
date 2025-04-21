@@ -4,13 +4,7 @@ import { Button } from "@/app/components/ui/button"
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
 import { NavHeader } from "@/app/components/nav-header"
-
-const skills = [
-  "React", "Vite", "Next.js", "JavaScript", "TypeScript", "Material UI", 
-  "Shadcn UI", "Tailwind", "CSS", "HTML", "Node.js", "Express", "MongoDB", 
-  "PostgreSQL", "Git", "Bruno", "Postman", "Vercel", "Netlify", "Render", 
-  "CI/CD", "Windows", "Ubuntu", "Slack", "Zoom", "Jira", "Trello"
-]
+import { SkillsShowcase } from "@/app/components/skills-showcase"
 
 export default function Portfolio() {
   return (
@@ -66,17 +60,7 @@ export default function Portfolio() {
       {/* Skills Section */}
       <section id="skills" className="min-h-screen bg-secondary/20 py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8">Skills</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {skills.map((skill) => (
-              <div
-                key={skill}
-                className="bg-background p-4 rounded-lg shadow-sm flex items-center justify-center text-center"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
+          <SkillsShowcase />
         </div>
       </section>
 
