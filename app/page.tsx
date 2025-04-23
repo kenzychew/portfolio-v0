@@ -47,7 +47,7 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* Combined About Section */}
+      {/* About Section */}
       <section id="about" className="min-h-screen bg-background py-20 px-4">
         <div className="container mx-auto">
           <motion.div
@@ -91,7 +91,7 @@ export default function Portfolio() {
             {[
               {
                 title: "Furkids",
-                description: "Full-stack pet grooming appointment booking application featuring scheduling and time slot management, ensuring overlapping or conflicting appointments are avoided and including cancellations and rescheduling of appointments. Dual user login interface for groomers and pet owners. Frontend (React) deployed on Vercel. Backend (Node, Express, MongoDB) deployed on Render.",
+                description: "Full-stack pet grooming appointment booking system featuring appointment scheduling and time slot management. Dual user login interface for groomers and pet owners. Frontend (React) deployed on Vercel. Backend (Node, Express, MongoDB) deployed on Render.",
                 github: "https://github.com/kenzychew/pet-app",
                 live: "https://furkids.vercel.app",
                 tech: ["React", "Node.js", "Express", "MongoDB", "Vercel", "Render"]
