@@ -47,25 +47,44 @@ export default function Portfolio() {
         </motion.div>
       </section>
 
-      {/* About Section */}
+      {/* Combined About Section */}
       <section id="about" className="min-h-screen bg-background py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-8">About Me</h2>
-          <p className="text-lg text-muted-foreground">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="min-h-screen bg-secondary/20 py-20 px-4">
-        <div className="container mx-auto">
-          <SkillsShowcase />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-8">About Me</h2>
+            <div className="prose prose-lg dark:prose-invert max-w-none">
+              <p className="text-lg text-muted-foreground mb-6">
+                Hi, I'm a software engineer based in Singapore with a passion for building impactful digital solutions. When I'm not coding, you'll often find me immersed in games like Valorant, Apex Legends, Rocket League, or Dota 2. I also enjoy running, working out, and spending quality time with my dog.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                I believe in continuous learning, teamwork, and bringing creativity to every project—both online and offline.
+              </p>
+            </div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
+            <p className="text-lg text-muted-foreground mb-10">
+              Here's my technical toolkit that I use to build web applications:
+            </p>
+            <SkillsShowcase />
+          </motion.div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="min-h-screen bg-background py-20 px-4">
+      <section id="projects" className="min-h-screen bg-secondary/20 py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-8">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">

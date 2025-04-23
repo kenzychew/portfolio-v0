@@ -36,7 +36,7 @@ export function NavHeader() {
     )}>
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex gap-6">
-          {["Home", "About", "Skills", "Projects"].map((item) => (
+          {["Home", "About", "Projects"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}

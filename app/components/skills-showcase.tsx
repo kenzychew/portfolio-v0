@@ -79,49 +79,42 @@ export function SkillsShowcase() {
   }
 
   return (
-    <>
-      <h2 className="text-3xl font-bold mb-8">Technical Skills</h2>
-      <p className="text-lg text-muted-foreground mb-10">
-        A comprehensive overview of my technical expertise across various technologies and domains.
-      </p>
+    <Tabs defaultValue="all" className="w-full" onValueChange={setActiveCategory}>
+      <div className="flex justify-center mb-8">
+        <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-1">
+          <TabsTrigger value="all">All</TabsTrigger>
+          <TabsTrigger value="frontend">Frontend</TabsTrigger>
+          <TabsTrigger value="backend">Backend</TabsTrigger>
+          <TabsTrigger value="database">Database</TabsTrigger>
+          <TabsTrigger value="devops">DevOps</TabsTrigger>
+          <TabsTrigger value="tools">Tools</TabsTrigger>
+        </TabsList>
+      </div>
 
-      <Tabs defaultValue="all" className="w-full" onValueChange={setActiveCategory}>
-        <div className="flex justify-center mb-8">
-          <TabsList className="grid grid-cols-3 md:grid-cols-6 gap-1">
-            <TabsTrigger value="all">All</TabsTrigger>
-            <TabsTrigger value="frontend">Frontend</TabsTrigger>
-            <TabsTrigger value="backend">Backend</TabsTrigger>
-            <TabsTrigger value="database">Database</TabsTrigger>
-            <TabsTrigger value="devops">DevOps</TabsTrigger>
-            <TabsTrigger value="tools">Tools</TabsTrigger>
-          </TabsList>
+      <TabsContent value={activeCategory} className="mt-0">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {filteredSkills.map((skill, index) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+            >
+              <Card className="overflow-hidden h-full">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="outline" className="capitalize">
+                      {getCategoryIcon(skill.category)}
+                      <span className="ml-1">{skill.category}</span>
+                    </Badge>
+                  </div>
+                  <h3 className="font-medium">{skill.name}</h3>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
-
-        <TabsContent value={activeCategory} className="mt-0">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {filteredSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <Card className="overflow-hidden h-full">
-                  <CardContent className="p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <Badge variant="outline" className="capitalize">
-                        {getCategoryIcon(skill.category)}
-                        <span className="ml-1">{skill.category}</span>
-                      </Badge>
-                    </div>
-                    <h3 className="font-medium">{skill.name}</h3>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
-    </>
+      </TabsContent>
+    </Tabs>
   )
 } 
