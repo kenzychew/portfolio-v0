@@ -20,27 +20,27 @@ export default function Portfolio() {
           className="text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">Hi, I&apos;m Kenneth</h1>
-          <p className="text-xl text-muted-foreground max-w-md mx-auto mb-8 flex items-center justify-center gap-3">
+          <p className="text-xl text-muted-foreground max-w-md mx-auto mb-8">
             Full Stack Developer @kenzychew
-            <div className="flex gap-3">
-              {[
-                { icon: Linkedin, href: "https://linkedin.com/in/kenzychew", label: "LinkedIn" },
-                { icon: Github, href: "https://github.com/kenzychew", label: "GitHub" },
-                { icon: Mail, href: "mailto:kenzychew@gmail.com", label: "Email" }
-              ].map(({ icon: Icon, href, label }) => (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                  aria-label={label}
-                >
-                  <Icon size={20} />
-                </a>
-              ))}
-            </div>
           </p>
+          <div className="flex items-center justify-center gap-3 mb-8">
+            {[
+              { icon: Linkedin, href: "https://linkedin.com/in/kenzychew", label: "LinkedIn" },
+              { icon: Github, href: "https://github.com/kenzychew", label: "GitHub" },
+              { icon: Mail, href: "mailto:kenzychew@gmail.com", label: "Email" }
+            ].map(({ icon: Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label={label}
+              >
+                <Icon size={30} />
+              </a>
+            ))}
+          </div>
           <Button className="px-6 py-3 text-lg" asChild>
             <a href="#about">Get to know me</a>
           </Button>
@@ -60,7 +60,7 @@ export default function Portfolio() {
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p className="text-lg text-muted-foreground mb-6">
-                Hi, I'm a software engineer based in Singapore with a passion for building impactful digital solutions. When I'm not coding, you'll often find me immersed in games like Valorant, Apex Legends, Rocket League, or Dota 2. I also enjoy running, working out, and spending quality time with my dog.
+                Software engineer based in Singapore with a passion for building impactful digital solutions. I enjoy reading about the latest happenings in tech and love spending weekends at a cafe with a book. I also enjoy running, working out, and spending quality time touching grass with my dog. When I&apos;m not coding or reading, you&apos;ll often find me immersed in a variety of games such as Valorant, Rocket League, or Dota 2. 
               </p>
               <p className="text-lg text-muted-foreground">
                 I believe in continuous learning, teamwork, and bringing creativity to every project—both online and offline.
@@ -74,9 +74,9 @@ export default function Portfolio() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-6">Technical Skills</h3>
+            <h3 className="text-2xl font-bold mb-6">Skills</h3>
             <p className="text-lg text-muted-foreground mb-10">
-              Here's my technical toolkit that I use to build web applications:
+              Here&apos;s the toolkit that I use to build web applications:
             </p>
             <SkillsShowcase />
           </motion.div>
